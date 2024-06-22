@@ -7,16 +7,25 @@ const Styles = styled.div`
     justify-content: space-evenly;
     flex-wrap: wrap;
   }
+  .Pokedex-Winner {
+    color: green;
+  }
+  .Pokedex-LOSER {
+    color: red;
+  }
+  .Pokedex {
+    text-align: center;
+  }
 `;
 
 function Pokedex(props) {
   return (
     <Styles>
       <div className="Pokedex">
-        <h1>Pokedex!</h1>
-
-        <p> Total Experience: {props.exp}</p>
-        <p>{props.isWinner ? "WINNER" : "LOSER"}</p>
+        <h4> Total Experience: {props.exp}</h4>
+        <h1 className={props.isWinner ? "Pokedex-Winner" : "Pokedex-LOSER"}>
+          {props.isWinner ? "WINNER" : "LOSER"}
+        </h1>
         <div className="Pokedex-cards">
           {props.pokemon.map((p) => (
             <Pokecard
