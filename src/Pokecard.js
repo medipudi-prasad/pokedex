@@ -13,6 +13,22 @@ const Styles = styled.div`
   pokecard-data {
     font-size: 80%;
   }
+  .Pokecard-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 250px;
+    background-color: #eceff1;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+  }
+  .Pokecard img:hover {
+    transform: scale(1.5);
+    opacity: 0.8;
+  }
+  .Pokecard img {
+    transition: all ease 500ms;
+  }
 `;
 
 // const POKE_API =
@@ -35,7 +51,9 @@ function Pokecard(props) {
     <Styles>
       <div className="Pokecard">
         <h1 className="pokecard-title">{props.name}</h1>
-        <img src={imgsrc} alt={props.name} />
+        <div className="Pokecard-image">
+          <img src={imgsrc} alt={props.name} />
+        </div>
         <div className="pokecard-data">{props.type}</div>
         <div className="pokecard-data">{props.exp}</div>
       </div>
